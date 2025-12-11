@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-primary px-3">
       <div className="container-fluid">
         <img
-          src="https://edupolyoldsite.vercel.app/common/assets/edupoly-logo-dark.png"
+          src="https://edupoly.vercel.app/fullstack-training-hyderabad.png"
           className="img-fluid"
           width="160px"
           alt="Logo"
