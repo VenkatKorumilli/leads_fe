@@ -6,44 +6,36 @@ export const leadsApi = createApi({
   endpoints: (builder) => ({
     addUser: builder.mutation({
     query: (data) => ({
-    url:"/addUser",
+    url:"/api/users/addUser",
     method:"POST",
     body:data
     })
     }),
     userLogin: builder.mutation({
     query: (data) => ({
-    url:"/userLogin",
+    url:"/api/users/userLogin",
     method:"POST",
     body:data
     })
     }),
-    addLead: builder.mutation({
-      query: (leadData) => ({
-        url: "/addlead",
-        method: "POST",
-        body: leadData,
-      }),
+      getAllLeads: builder.query({
+      query: () => "/api/leads/all",
     }),
-    getAllLeads: builder.query({
-      query: () => ({
-        url: "/getallleads",
-      }),
-    }),
+
     getLeadsById: builder.query({
-      query: (id) => ({
-        url: `/getLeadById/${id}`,
-      }),
+      query: (id) => `/api/leads/single/${id}`,
     }),
+
     deleteLead: builder.mutation({
       query: (id) => ({
-        url: `/deleteLead/${id}`,
+        url: `/api/leads/delete/${id}`,
         method: "DELETE",
       }),
     }),
+
     editLead: builder.mutation({
       query: (data) => ({
-        url: `/editLead/${data["_id"]}`,
+        url: `/api/leads/edit/${data._id}`,
         method: "PUT",
         body: data,
       }),
